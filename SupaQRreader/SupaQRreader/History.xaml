@@ -7,11 +7,25 @@
              Title="History"
              IconImageSource="history.png"
              x:Class="SupaQRreader.History">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="History!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <BoxView BackgroundColor="#2e9bc9" Grid.Row="0"/>
+        <Label Text="Historie" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontFamily="Arial" FontAttributes="Bold" FontSize="20" Margin="20,0,0,0"></Label>
+        <BoxView Grid.Row="1"/>
+        <!-- 
+        <ListView x:Name="listView"
+                  Margin="20"
+                  ItemSelected="zobrazeni">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Date}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        -->
+    </Grid>
 </ContentPage>

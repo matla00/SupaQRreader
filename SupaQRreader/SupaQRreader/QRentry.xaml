@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupaQRreader.QRentry">
+    <StackLayout Margin="20">
+        <Editor Placeholder="Vložte nadpis"
+                Text="{Binding Name}"
+                HeightRequest="100" />
+        <Editor Placeholder="Vložte poznámku"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Smazat" 
+                    CornerRadius="90" />
+            <Button Grid.Column="1"
+                    Text="Uložit" 
+                    CornerRadius="90" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

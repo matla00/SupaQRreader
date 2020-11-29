@@ -7,11 +7,26 @@
              Title="MojeQR"
              IconImageSource="home.png"
              x:Class="SupaQRreader.MojeQR">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="MojeQR!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <BoxView BackgroundColor="#2e9bc9" Grid.Row="0"/>
+        <Label Text="Moje QR" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontFamily="Arial" FontAttributes="Bold" FontSize="20" Margin="20,0,0,0"></Label>
+        <Button Text="Přidat" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Transparent" TextColor="White" />
+        <BoxView Grid.Row="1"/>
+         <!-- 
+        <ListView x:Name="listView"
+                  Margin="20"
+                  ItemSelected="zobrazeni">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Date}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        -->
+    </Grid>
 </ContentPage>
