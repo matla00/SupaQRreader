@@ -5,9 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:SupaQRreader;assembly=SupaQRreader"
              mc:Ignorable="d"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
              x:Class="SupaQRreader.TabbedPage1">
   <!--Pages can be added as references or inline-->
-    <local:History />
+    <local:History/>
     <local:QRreader />
     <local:MojeQR />
 </TabbedPage>
