@@ -9,7 +9,7 @@
              android:TabbedPage.ToolbarPlacement="Bottom"
              x:Class="SupaQRreader.TabbedPage1">
   <!--Pages can be added as references or inline-->
-    <local:History/>
+    <local:History />
     <local:QRreader />
-    <local:MojeQR />
+    <local:MojeQR/>
 </TabbedPage>
