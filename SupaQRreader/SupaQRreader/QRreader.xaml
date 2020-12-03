@@ -9,16 +9,24 @@
              IconImageSource="plus.png"
              Title="QR">
     <ContentPage.Content>
-        <Grid VerticalOptions="CenterAndExpand"
-              HorizontalOptions="CenterAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <BoxView BackgroundColor="#2e9bc9" Grid.Row="0" Margin="00"/>
+            <Label Text="QRreader" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontFamily="Arial" FontAttributes="Bold" FontSize="20" Margin="20,0,0,0"></Label>
+
             <zxing:ZXingScannerView x:Name="scanView"
                                         OnScanResult="scanView_OnScanResult"
                                         IsScanning="True"
                                         VerticalOptions="CenterAndExpand"
-                                        WidthRequest="500"
-                                        HeightRequest="500"
-                                        HorizontalOptions="CenterAndExpand"/>
-            <zxing:ZXingDefaultOverlay TopText="Align the barcode within the frame"/>
+                                        HorizontalOptions="CenterAndExpand"
+                                        Grid.Row="1" />
+            <zxing:ZXingDefaultOverlay TopText="Naskenujte QR kód" Grid.Row="1"/>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
