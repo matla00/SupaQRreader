@@ -16,5 +16,9 @@ namespace SupaQRreader
         {
             InitializeComponent();
         }
+        async void add_qr(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QRentry());
+        }
     }
-}
+} 

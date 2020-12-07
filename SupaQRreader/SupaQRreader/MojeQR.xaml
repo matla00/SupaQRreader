@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <BoxView BackgroundColor="#2e9bc9" Grid.Row="0"/>
         <Label Text="Moje QR" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontFamily="Arial" FontAttributes="Bold" FontSize="20" Margin="20,0,0,0"></Label>
-        <Button Text="Přidat" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#2e9bc9" TextColor="White" CornerRadius="45" />
+        <Button Text="Přidat" Clicked="add_qr" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#2e9bc9" TextColor="White" CornerRadius="45" />
         <BoxView Grid.Row="1"/>
          <!-- 
         <ListView x:Name="listView"
