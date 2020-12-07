@@ -24,20 +24,13 @@
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
 
     <item name="android:actionBarSize">60dp</item>
+
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
+
+
   </style>
-  <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item>
-    <color android:color="@color/splash_background"/>
-  </item>
-  <item>
-    <bitmap
-        android:src="@drawable/zulul_loading_screen"
-        android:tileMode="disabled"
-        android:gravity="center"/>
-  </item>
-</layer-list>
+  
 </resources>
