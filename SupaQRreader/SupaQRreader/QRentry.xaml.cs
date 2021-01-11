@@ -67,6 +67,20 @@ namespace SupaQRreader
             await App.Database.SaveQRAsync(qr);
             await Navigation.PopAsync();
         }
+        async void MojeQR(object sender, EventArgs e)
+        {
+            QR qr = new QR();
+            if (ID_set)
+            {
+                qr = await App.Database.GetQRAsync(ID);
+                qr.Name = this.FindByName<Editor>("Name").Text;
+                qr.QR_text = this.FindByName<Editor>("Text").Text;
+                qr.Created = !qr.Created;
+                await App.Database.SaveQRAsync(qr);
+                await Navigation.PopAsync();
+            }
+
+        }
         async void delete_qr(object sender, EventArgs e)
         {
             if (ID_set)

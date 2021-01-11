@@ -31,6 +31,13 @@ namespace SupaQRreader.Model
         {
             return _database.Table<QR>().Where(i => i.Created == true).ToListAsync();
         }
+        async public Task<int> GetLastID()
+        {
+            var qr = _database.Table<QR>();
+            List<QR> list = await qr.ToListAsync();
+            int id = list[list.Count-1].ID;
+            return id;
+        }
 
         public Task<QR> GetQRAsync(int id)
         {

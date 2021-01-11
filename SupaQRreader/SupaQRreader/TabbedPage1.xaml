@@ -15,7 +15,11 @@
                 <local:History/>
             </x:Arguments>
         </NavigationPage>
-        <local:QRreader />
+        <NavigationPage IconImageSource="plus.png" Title="QR">
+            <x:Arguments>
+                <local:QRreader/>
+            </x:Arguments>
+        </NavigationPage>
         <NavigationPage IconImageSource="home.png" Title="MojeQR">
             <x:Arguments>
                 <local:MojeQR/>

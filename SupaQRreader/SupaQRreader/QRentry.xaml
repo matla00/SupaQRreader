@@ -18,6 +18,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Smazat" 
                     CornerRadius="90" 
@@ -26,18 +27,20 @@
                     Text="Uložit" 
                     CornerRadius="90" 
                     Clicked="OnSaveButtonClicked"/>
+            <Button Grid.Column="2"
+                    Text="MojeQR" 
+                    CornerRadius="90" 
+                    Clicked="MojeQR"/>
         </Grid>
-        
         <zx:ZXingBarcodeImageView
                     BarcodeFormat="QR_CODE"
                     BarcodeValue="test"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    x:Name="BarcodeView">
+                    x:Name="BarcodeView ">
             <zx:ZXingBarcodeImageView.BarcodeOptions>
                 <zxcm:EncodingOptions Width="500" Height="500" />
             </zx:ZXingBarcodeImageView.BarcodeOptions>
         </zx:ZXingBarcodeImageView>
-        
     </StackLayout>
 </ContentPage>
