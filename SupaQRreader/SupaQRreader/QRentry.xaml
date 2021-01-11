@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
              x:Class="SupaQRreader.QRentry">
     <StackLayout Margin="20">
         <Editor Placeholder="Vložte nadpis"
@@ -10,18 +12,32 @@
         <Editor Placeholder="Vložte poznámku"
                 Text=""
                 HeightRequest="100" 
-                x:Name="Text"/>
+                x:Name="Text"
+                TextChanged="EditorTextChanged"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Smazat" 
-                    CornerRadius="90" />
+                    CornerRadius="90" 
+                    Clicked="delete_qr"/>
             <Button Grid.Column="1"
                     Text="Uložit" 
                     CornerRadius="90" 
                     Clicked="OnSaveButtonClicked"/>
         </Grid>
+        
+        <zx:ZXingBarcodeImageView
+                    BarcodeFormat="QR_CODE"
+                    BarcodeValue="test"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    x:Name="BarcodeView">
+            <zx:ZXingBarcodeImageView.BarcodeOptions>
+                <zxcm:EncodingOptions Width="500" Height="500" />
+            </zx:ZXingBarcodeImageView.BarcodeOptions>
+        </zx:ZXingBarcodeImageView>
+        
     </StackLayout>
 </ContentPage>

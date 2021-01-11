@@ -3,26 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
              mc:Ignorable="d"
              Title="Historie"
              IconImageSource="history.png"
              x:Class="SupaQRreader.History">
-    <Grid RowSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
-        <ListView x:Name="listView"
-                  Margin="20"
-                  Grid.Row="0"
-                  ItemSelected="zobrazeni">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell x:Name="" Text="{Binding Name}"
-                              Detail="{Binding QR_text}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        
-    </Grid>
+    <ListView x:Name="listView"
+        Margin="20"
+        ItemSelected="zobrazeni"
+        VerticalOptions="FillAndExpand"
+        HasUnevenRows="False"
+        CachingStrategy="RecycleElement">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0"></Label>
+                        <Label Text="{Binding QR_text}" Grid.Row="1" Grid.Column="0"></Label>
+                        <zx:ZXingBarcodeImageView
+                                BarcodeFormat="QR_CODE"
+                                BarcodeValue="{Binding QR_text}"
+                                HeightRequest="50"
+                                WidthRequest="50"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                x:Name="BarcodeView"
+                                Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
+                            <zx:ZXingBarcodeImageView.BarcodeOptions>
+                                <zxcm:EncodingOptions Width="500" Height="500" />
+                            </zx:ZXingBarcodeImageView.BarcodeOptions>
+                        </zx:ZXingBarcodeImageView>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
 </ContentPage>

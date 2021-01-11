@@ -23,6 +23,14 @@ namespace SupaQRreader.Model
         {
             return _database.Table<QR>().ToListAsync();
         }
+        public Task<List<QR>> GetQRsAsyncHistory()
+        {
+            return _database.Table<QR>().Where(i => i.Created == false).ToListAsync();
+        }
+        public Task<List<QR>> GetQRsAsyncMojeQR()
+        {
+            return _database.Table<QR>().Where(i => i.Created == true).ToListAsync();
+        }
 
         public Task<QR> GetQRAsync(int id)
         {
@@ -53,7 +61,7 @@ namespace SupaQRreader.Model
             _database.UpdateAsync(qr);
         }
 
-        public Task<int> DeleteNoteAsync(QR qr)
+        public Task<int> DeleteQRAsync(QR qr)
         {
             return _database.DeleteAsync(qr);
         }

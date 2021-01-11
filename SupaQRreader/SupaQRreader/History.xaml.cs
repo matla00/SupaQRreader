@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SupaQRreader.Model;
+using ZXing.Net.Mobile.Forms;
 
 namespace SupaQRreader
 {
@@ -21,10 +22,7 @@ namespace SupaQRreader
         {
             base.OnAppearing();
 
-            listView.ItemsSource = await App.Database.GetQRsAsync();
-
-            List<QR> test = await App.Database.GetQRsAsync();
-            Console.WriteLine(test[0].QR_text);
+            listView.ItemsSource = await App.Database.GetQRsAsyncHistory();
         }
         async void zobrazeni(object sender, SelectedItemChangedEventArgs e)
         {
@@ -34,6 +32,5 @@ namespace SupaQRreader
                 await Navigation.PushAsync(new QRentry(true, qr.ID));
             }
         }
-
     }
 }
