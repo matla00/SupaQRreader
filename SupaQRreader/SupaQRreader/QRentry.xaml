@@ -4,11 +4,13 @@
              x:Class="SupaQRreader.QRentry">
     <StackLayout Margin="20">
         <Editor Placeholder="Vložte nadpis"
-                Text="{Binding Name}"
-                HeightRequest="100" />
+                Text=""
+                HeightRequest="100" 
+                x:Name="Name"/>
         <Editor Placeholder="Vložte poznámku"
-                Text="{Binding Text}"
-                HeightRequest="100" />
+                Text=""
+                HeightRequest="100" 
+                x:Name="Text"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,7 +20,8 @@
                     CornerRadius="90" />
             <Button Grid.Column="1"
                     Text="Uložit" 
-                    CornerRadius="90" />
+                    CornerRadius="90" 
+                    Clicked="OnSaveButtonClicked"/>
         </Grid>
     </StackLayout>
 </ContentPage>

@@ -26,6 +26,14 @@ namespace SupaQRreader
             List<QR> test = await App.Database.GetQRsAsync();
             Console.WriteLine(test[0].QR_text);
         }
+        async void zobrazeni(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                QR qr = e.SelectedItem as QR;
+                await Navigation.PushAsync(new QRentry(true, qr.ID));
+            }
+        }
 
     }
 }
