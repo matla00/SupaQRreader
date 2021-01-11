@@ -15,17 +15,16 @@
         <BoxView BackgroundColor="#2e9bc9" Grid.Row="0"/>
         <Label Text="Historie" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontFamily="Arial" FontAttributes="Bold" FontSize="20" Margin="20,0,0,0"></Label>
         <BoxView Grid.Row="1"/>
-        <!-- 
+        
         <ListView x:Name="listView"
-                  Margin="20"
-                  ItemSelected="zobrazeni">
+                  Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}"
-                              Detail="{Binding Date}" />
+                    <TextCell Text="{Binding QR_text}"
+                              Detail="{Binding Date_created}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        -->
+        
     </Grid>
 </ContentPage>

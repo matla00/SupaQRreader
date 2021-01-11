@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SupaQRreader.Model;
 
 namespace SupaQRreader
 {
@@ -16,5 +17,15 @@ namespace SupaQRreader
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            listView.ItemsSource = await App.Database.GetQRsAsync();
+
+            List<QR> test = await App.Database.GetQRsAsync();
+            Console.WriteLine(test[0].QR_text);
+        }
+
     }
 }
