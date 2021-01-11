@@ -4,25 +4,22 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             Title="History"
+             Title="Historie"
              IconImageSource="history.png"
              x:Class="SupaQRreader.History">
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <BoxView BackgroundColor="#2e9bc9" Grid.Row="0"/>
-        <Label Text="Historie" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontFamily="Arial" FontAttributes="Bold" FontSize="20" Margin="20,0,0,0"></Label>
 
         <ListView x:Name="listView"
                   Margin="20"
-                  Grid.Row="1"
+                  Grid.Row="0"
                   ItemSelected="zobrazeni">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell x:Name="" Text="{Binding QR_text}"
-                              Detail="{Binding Date_created}"/>
+                    <TextCell x:Name="" Text="{Binding Name}"
+                              Detail="{Binding QR_text}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
