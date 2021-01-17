@@ -37,7 +37,7 @@
                     BarcodeValue="test"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    x:Name="BarcodeView ">
+                    x:Name="BarcodeView">
             <zx:ZXingBarcodeImageView.BarcodeOptions>
                 <zxcm:EncodingOptions Width="500" Height="500" />
             </zx:ZXingBarcodeImageView.BarcodeOptions>
