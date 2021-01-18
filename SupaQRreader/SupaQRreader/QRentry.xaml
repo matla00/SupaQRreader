@@ -21,14 +21,17 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Smazat" 
-                    CornerRadius="90" 
+                    CornerRadius="90"
+                    FontSize="12"
                     Clicked="delete_qr"/>
             <Button Grid.Column="1"
                     Text="Uložit" 
+                    FontSize="12"
                     CornerRadius="90" 
                     Clicked="OnSaveButtonClicked"/>
             <Button Grid.Column="2"
-                    Text="MojeQR" 
+                    Text="Přesunout" 
+                    FontSize="12"
                     CornerRadius="90" 
                     Clicked="MojeQR"/>
         </Grid>
